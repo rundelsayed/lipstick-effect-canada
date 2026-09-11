@@ -19,6 +19,10 @@ To measure this, I construct a **Relative Shift** variable:
 
 A positive Relative Shift indicates that affordable indulgences are growing faster than big-ticket spending, while a negative value indicates the opposite.
 
+### Relative Spending Shift Over Time
+
+![Relative Spending Shift Over Time](/Users/rundalsayed/Lipstick Effect/output.png)
+
 ## Data
 
 The analysis uses Canadian quarterly data spanning the 1990s through 2026.
@@ -79,6 +83,8 @@ GDP growth had a moderate negative correlation with Relative Shift (r ≈ -0.40)
 
 This relationship remained statistically significant after excluding the COVID-19 period and after applying HAC robust standard errors.
 
+![GDP Growth vs Relative Shift](/Users/rundalsayed/Lipstick Effect/output2.png)
+
 ### 2. Inflation and interest rates were also associated with relative spending shifts
 
 After controlling for the other macroeconomic indicators, higher inflation and a higher Bank Rate were associated with a higher Relative Shift. Both relationships remained statistically significant using HAC robust standard errors.
@@ -94,7 +100,7 @@ Unemployment, however, did not have a statistically significant linear relations
 | Random Forest | **6.218** | **8.223** | **0.191** |
 
 The Random Forest reduced MAE by approximately 21% relative to the historical-mean baseline. However, the model still struggled to predict the extreme spending shifts surrounding the COVID-19 pandemic.
-
+![Actual vs Random Forest Predictions](/Users/rundalsayed/Lipstick Effect/output3.png)
 ### 4. Predictive performance was less clear across the full sample
 
 Five-fold time-series cross-validation produced an average MAE of **3.404** for Linear Regression and **3.362** for Random Forest.
@@ -108,3 +114,39 @@ Permutation importance identified **Unemployment Rate** and **GDP Growth** as th
 Overall, the results provide evidence consistent with a relative "lipstick effect" in Canadian consumption data. Affordable indulgences tended to perform better relative to big-ticket goods under some forms of economic distress, particularly during periods of weaker GDP growth, higher inflation, and higher interest rates.
 
 However, the evidence is not uniform across all indicators. Unemployment was not statistically significant in the linear regression, and predictive performance varied considerably across time periods. The results should therefore be interpreted as evidence of an association between macroeconomic conditions and relative spending behaviour rather than a causal effect.
+
+## Limitations
+
+Several limitations should be considered when interpreting the results:
+
+- **Category classification:** The distinction between "Affordable Indulgence" and "Big-Ticket" spending is constructed for this analysis. Some consumption categories may not fit perfectly into either group.
+- **Aggregate data:** The analysis uses national-level consumption data rather than individual household purchases, so it cannot directly observe whether individual consumers substitute big-ticket purchases for affordable indulgences.
+- **Observational analysis:** The relationships identified by the regressions are associations and should not be interpreted as causal effects.
+- **COVID-19 volatility:** The pandemic produced unusually large changes in both economic conditions and consumption behaviour. A separate non-COVID regression was therefore used as a robustness check.
+- **Limited sample size:** Quarterly data provides a relatively small number of observations for machine-learning models, particularly Random Forest.
+- **Changing relationships over time:** Time-series cross-validation showed that prediction errors increased substantially in more recent periods, suggesting that historical relationships may not remain stable across different economic environments.
+
+## Tools & Technologies
+
+- **Python**
+- **pandas** — data cleaning, transformation, aggregation, and merging
+- **NumPy** — numerical operations
+- **Matplotlib** — data visualization
+- **statsmodels** — OLS regression and HAC robust inference
+- **scikit-learn** — Linear Regression, Random Forest, model evaluation, permutation importance, and time-series cross-validation
+- **Jupyter Notebook** — analysis and documentation
+
+## How to Run
+
+1. Clone or download this repository.
+2. Install the required Python libraries.
+3. Open `lipstick_effect_analysis.ipynb` in Jupyter Notebook or JupyterLab.
+4. Run the notebook from top to bottom.
+
+The notebook contains the complete workflow from data preparation and feature construction through econometric analysis and machine-learning evaluation.
+
+## Author
+
+**Rund Ali**  
+Honours Specialization in Computer Science  
+Western University
