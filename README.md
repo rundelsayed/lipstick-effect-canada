@@ -21,7 +21,7 @@ A positive Relative Shift indicates that affordable indulgences are growing fast
 
 ### Relative Spending Shift Over Time
 
-![Relative Spending Shift Over Time](figures/output.png)
+![Relative Spending Shift Over Time](output.png)
 
 ## Data
 
