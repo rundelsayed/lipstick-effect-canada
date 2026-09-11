@@ -21,7 +21,7 @@ A positive Relative Shift indicates that affordable indulgences are growing fast
 
 ### Relative Spending Shift Over Time
 
-![Relative Spending Shift Over Time](/Users/rundalsayed/Lipstick Effect/output.png)
+![Relative Spending Shift Over Time](figures/output.png)
 
 ## Data
 
@@ -83,7 +83,7 @@ GDP growth had a moderate negative correlation with Relative Shift (r ≈ -0.40)
 
 This relationship remained statistically significant after excluding the COVID-19 period and after applying HAC robust standard errors.
 
-![GDP Growth vs Relative Shift](/Users/rundalsayed/Lipstick Effect/output2.png)
+![GDP Growth vs Relative Shift](figures/output2.png)
 
 ### 2. Inflation and interest rates were also associated with relative spending shifts
 
@@ -100,7 +100,7 @@ Unemployment, however, did not have a statistically significant linear relations
 | Random Forest | **6.218** | **8.223** | **0.191** |
 
 The Random Forest reduced MAE by approximately 21% relative to the historical-mean baseline. However, the model still struggled to predict the extreme spending shifts surrounding the COVID-19 pandemic.
-![Actual vs Random Forest Predictions](/Users/rundalsayed/Lipstick Effect/output3.png)
+![Actual vs Random Forest Predictions](figures/output3.png)
 ### 4. Predictive performance was less clear across the full sample
 
 Five-fold time-series cross-validation produced an average MAE of **3.404** for Linear Regression and **3.362** for Random Forest.
